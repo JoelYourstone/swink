@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext, useState } from "react";
+import Home from "./components/Home";
+import DrinksList from "./components/DrinksList";
+import Checkout from "./Checkout";
+import { getSettings } from ".";
+export type RouteType = {
+  setRoute: (route: RouteState) => void;
+  currentRoute: RouteState;
+};
+
+export type RouteState = {
+  route: string;
+  data: any;
+};
 
 const App: React.FC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+  const settings = getSettings();
+  const [route, setRoute] = useState<RouteState>({ route: "home", data: {} });
+
+  switch (route.route) {
+    case "home":
+      return <Home setRoute={setRoute} currentRoute={route} />;
+    case "drinksList":
+      return <DrinksList setRoute={setRoute} currentRoute={route} />;
+    case "checkout":
+      return <Checkout setRoute={setRoute} currentRoute={route} />;
+    default:
+      return <h1>404</h1>;
+  }
+};
 
 export default App;
