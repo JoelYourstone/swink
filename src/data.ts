@@ -32,6 +32,8 @@ export type IngredientLineItem = {
 export type DrinkType = {
   name: string;
   image: string;
+  addedBy: string;
+  instructions?: string[];
   ingredientLineItems: Array<IngredientLineItem>;
 };
 

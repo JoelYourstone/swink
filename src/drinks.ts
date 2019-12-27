@@ -13,12 +13,7 @@ const drinksList: DrinksList = [
         specificSelection: "sauza",
         unit: "cl"
       },
-      {
-        name: "Cointreau",
-        amount: 2,
-        type: "Liquor",
-        unit: "cl"
-      },
+      { name: "Cointreau", amount: 2, type: "Liquor", unit: "cl" },
       {
         name: "Lime Juice",
         amount: 3,
@@ -26,13 +21,9 @@ const drinksList: DrinksList = [
         specificSelection: "freshlime",
         unit: "cl"
       },
-      {
-        unit: "cl",
-        name: "Agave syrup",
-        amount: 1,
-        type: "Sweetener"
-      }
-    ]
+      { unit: "cl", name: "Agave syrup", amount: 1, type: "Sweetener" }
+    ],
+    addedBy: "Joel"
   },
   {
     name: "Missionary's Downfall",
@@ -53,12 +44,7 @@ const drinksList: DrinksList = [
         type: "Liquor",
         specificSelection: "peachtree"
       },
-      {
-        unit: "",
-        name: "Mint Leaves",
-        amount: 12,
-        type: "Leaves"
-      },
+      { unit: "", name: "Mint Leaves", amount: 12, type: "Leaves" },
       {
         unit: "cl",
         name: "Lime Juice",
@@ -66,12 +52,7 @@ const drinksList: DrinksList = [
         specificSelection: "freshlime",
         type: "Fresh fruit juice"
       },
-      {
-        unit: "cl",
-        name: "Pineapple Juice",
-        amount: 6,
-        type: "Juice"
-      },
+      { unit: "cl", name: "Pineapple Juice", amount: 6, type: "Juice" },
       {
         unit: "cl",
         name: "Sugar syrup",
@@ -79,7 +60,8 @@ const drinksList: DrinksList = [
         specificSelection: "agave",
         type: "Sweetener"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     name: "Hemingway Breakfast",
@@ -121,19 +103,15 @@ const drinksList: DrinksList = [
         name: "English Orange Marmelade",
         type: "Liquor"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     image:
       "https://www.kahlua.com/globalassets/images/cocktails/2018/opt/kahluadrinks_whiterussian1.png",
     name: "White Malaysian",
     ingredientLineItems: [
-      {
-        unit: "cl",
-        amount: 4,
-        name: "Vodka",
-        type: "Vodka"
-      },
+      { unit: "cl", amount: 4, name: "Vodka", type: "Vodka" },
       {
         unit: "cl",
         amount: 3,
@@ -148,19 +126,15 @@ const drinksList: DrinksList = [
         specificSelection: "ikaffe",
         type: "Juice"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     image:
       "https://cdn.diffords.com/contrib/stock-images/2016/12/23/2016e3345cfc0c53c47cd04eee658d557311.jpg",
     name: "Kiwi Bellini",
     ingredientLineItems: [
-      {
-        name: "Vodka",
-        amount: 4,
-        unit: "cl",
-        type: "Vodka"
-      },
+      { name: "Vodka", amount: 4, unit: "cl", type: "Vodka" },
       {
         unit: "cl",
         name: "Lemon Juice",
@@ -182,12 +156,7 @@ const drinksList: DrinksList = [
         specificSelection: "kiwi",
         type: "Other"
       },
-      {
-        unit: "cl",
-        name: "Sparkling",
-        amount: 6,
-        type: "Sparkling"
-      },
+      { unit: "cl", name: "Sparkling", amount: 6, type: "Sparkling" },
       {
         unit: "",
         name: "Basil Leaves",
@@ -195,7 +164,8 @@ const drinksList: DrinksList = [
         type: "Leaves",
         specificSelection: "basil"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     image:
@@ -209,12 +179,7 @@ const drinksList: DrinksList = [
         type: "Tequila",
         specificSelection: "calle23"
       },
-      {
-        unit: "cl",
-        name: "Cointreau",
-        amount: 1,
-        type: "Liquor"
-      },
+      { unit: "cl", name: "Cointreau", amount: 1, type: "Liquor" },
       {
         unit: "cl",
         name: "Ancho Reyes",
@@ -229,12 +194,7 @@ const drinksList: DrinksList = [
         type: "Fresh fruit juice",
         specificSelection: "freshlime"
       },
-      {
-        unit: "cl",
-        name: "Agave syrup",
-        amount: 1,
-        type: "Sweetener"
-      },
+      { unit: "cl", name: "Agave syrup", amount: 1, type: "Sweetener" },
       {
         unit: "",
         name: "Tajin",
@@ -242,7 +202,8 @@ const drinksList: DrinksList = [
         specificSelection: "tajin",
         type: "Other"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     name: "Singapore Sling",
@@ -256,12 +217,7 @@ const drinksList: DrinksList = [
         amount: 2.5,
         specificSelection: "tanqueray"
       },
-      {
-        unit: "cl",
-        name: "Port Wine",
-        type: "Port",
-        amount: 2.5
-      },
+      { unit: "cl", name: "Port Wine", type: "Port", amount: 2.5 },
       {
         unit: "cl",
         name: "Benedictine",
@@ -276,12 +232,7 @@ const drinksList: DrinksList = [
         specificSelection: "angostura",
         type: "Bitters"
       },
-      {
-        unit: "cl",
-        name: "Pineapple Juice",
-        amount: 5,
-        type: "Juice"
-      },
+      { unit: "cl", name: "Pineapple Juice", amount: 5, type: "Juice" },
       {
         unit: "cl",
         name: "Lime Juice",
@@ -296,19 +247,15 @@ const drinksList: DrinksList = [
         specificSelection: "grenadine",
         type: "Liquor"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     image:
       "https://cdn.diffords.com/contrib/stock-images/2018/12/5c137598b14d2.jpg",
     name: "Moonlight",
     ingredientLineItems: [
-      {
-        unit: "cl",
-        name: "Gin",
-        amount: 3,
-        type: "Gin"
-      },
+      { unit: "cl", name: "Gin", amount: 3, type: "Gin" },
       {
         unit: "cl",
         name: "Triple Sec",
@@ -337,19 +284,15 @@ const drinksList: DrinksList = [
         specificSelection: "freshlemon",
         type: "Fresh fruit juice"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     name: "French 76",
     image:
       "https://cdn.diffords.com/contrib/stock-images/2017/7/04/201750c47a400dc07fd2ca4f5be453e82829.jpg",
     ingredientLineItems: [
-      {
-        unit: "cl",
-        name: "Gin",
-        amount: 2,
-        type: "Gin"
-      },
+      { unit: "cl", name: "Gin", amount: 2, type: "Gin" },
       {
         unit: "cl",
         name: "Lemon Juice",
@@ -371,25 +314,16 @@ const drinksList: DrinksList = [
         specificSelection: "stgermain",
         type: "Liquor"
       },
-      {
-        unit: "cl",
-        name: "Sparkling",
-        amount: 10,
-        type: "Sparkling"
-      }
-    ]
+      { unit: "cl", name: "Sparkling", amount: 10, type: "Sparkling" }
+    ],
+    addedBy: "Joel"
   },
   {
     name: "Låtsasvuxen",
     image:
       "https://cdn.diffords.com/contrib/stock-images/2016/1/41/201670d4ba41562cc286c2ef9364977057c9.jpg",
     ingredientLineItems: [
-      {
-        unit: "cl",
-        name: "Rum",
-        amount: 5,
-        type: "Rum"
-      },
+      { unit: "cl", name: "Rum", amount: 5, type: "Rum" },
       {
         unit: "cl",
         name: "Syrup",
@@ -404,7 +338,8 @@ const drinksList: DrinksList = [
         specificSelection: "angostura",
         type: "Bitters"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     image:
@@ -439,7 +374,8 @@ const drinksList: DrinksList = [
         type: "Leaves"
       }
     ],
-    name: "Gin Basil Smash"
+    name: "Gin Basil Smash",
+    addedBy: "Joel"
   },
   {
     ingredientLineItems: [
@@ -474,7 +410,8 @@ const drinksList: DrinksList = [
     ],
     image:
       "https://d32miag6ta013h.cloudfront.net/master_cocktails/185/en-gl/small/bacardi-mojito_sml_580x820..png",
-    name: "Mojito"
+    name: "Mojito",
+    addedBy: "Joel"
   },
   {
     name: "Cosmopolitan",
@@ -493,12 +430,7 @@ const drinksList: DrinksList = [
         specificSelection: "cointreau",
         type: "Liquor"
       },
-      {
-        unit: "cl",
-        amount: 4,
-        name: "Cranberry juice",
-        type: "Juice"
-      },
+      { unit: "cl", amount: 4, name: "Cranberry juice", type: "Juice" },
       {
         unit: "cl",
         amount: 3,
@@ -507,13 +439,10 @@ const drinksList: DrinksList = [
         specificSelection: "freshlime"
       }
     ],
-    image: ""
+    image: "",
+    addedBy: "Joel"
   },
-  {
-    name: "Jungle Bird",
-    ingredientLineItems: [],
-    image: ""
-  },
+  { name: "Jungle Bird", ingredientLineItems: [], image: "", addedBy: "Joel" },
   {
     ingredientLineItems: [
       {
@@ -547,7 +476,8 @@ const drinksList: DrinksList = [
     ],
     image:
       "https://cdn.diffords.com/contrib/stock-images/2018/10/5bd1de632763b.jpg",
-    name: "Raspberry Daiquiri"
+    name: "Raspberry Daiquiri",
+    addedBy: "Joel"
   },
   {
     name: "Hendricks Gin & Tonic",
@@ -575,7 +505,8 @@ const drinksList: DrinksList = [
         specificSelection: "cucumberslice",
         type: "Other"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     name: "Bathtub Gin & Tonic",
@@ -610,7 +541,8 @@ const drinksList: DrinksList = [
       }
     ],
     image:
-      "https://daisiesandpie.co.uk/wp-content/uploads/2019/07/Abelforths-bathtub-gin-and-tonic-with-lemon-and-rosemary.jpg"
+      "https://daisiesandpie.co.uk/wp-content/uploads/2019/07/Abelforths-bathtub-gin-and-tonic-with-lemon-and-rosemary.jpg",
+    addedBy: "Joel"
   },
   {
     image:
@@ -645,7 +577,8 @@ const drinksList: DrinksList = [
         name: "Apple slice",
         type: "Other"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     image:
@@ -673,7 +606,8 @@ const drinksList: DrinksList = [
         specificSelection: "lemonslice",
         type: "Other"
       }
-    ]
+    ],
+    addedBy: "Joel"
   },
   {
     image:
@@ -686,12 +620,7 @@ const drinksList: DrinksList = [
         type: "Gin",
         specificSelection: "bombay"
       },
-      {
-        name: "Syrup",
-        amount: 2,
-        unit: "cl",
-        type: "Sweetener"
-      },
+      { name: "Syrup", amount: 2, unit: "cl", type: "Sweetener" },
       {
         name: "Lemon Juice",
         amount: 3,
@@ -707,7 +636,8 @@ const drinksList: DrinksList = [
         specificSelection: "aquafaba"
       }
     ],
-    name: "Gin sour"
+    name: "Gin sour",
+    addedBy: "Joel"
   }
 ];
 
