@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { RouteType } from "./App";
-import { DrinkType, ingredientsList, IngredientType } from "./data";
+import { DrinkType, ingredientsList, IngredientType, UnitType } from "./data";
 import SwishQRImage from "./components/SwishQRImage";
 import { styled } from "@glitz/react";
 import Button from "./components/Button";
@@ -133,7 +133,7 @@ export default (props: RouteType) => {
                   {lineItem.amount}
                 </styled.Div>
                 <styled.Div css={{ flexBasis: 60, flexShrink: 0, flexGrow: 0 }}>
-                  {ingredient.unit}
+                  {lineItem}
                 </styled.Div>
                 <div>{ingredient.name}</div>
                 <styled.Span
@@ -201,21 +201,23 @@ function calculateTotals(drink: DrinkType) {
     ingredient: IngredientType;
     amount: number;
     cost: number;
+    unit: UnitType;
   }> = [];
 
   for (let ingredient of drink.ingredientLineItems) {
     let ingredientData: IngredientType | undefined;
 
     // First default selection
-    if (ingredient.defaultSelection) {
+    if (ingredient.specificSelection) {
       ingredientData = ingredientsList.find(
-        i => i.identifier === ingredient.defaultSelection
+        i => i.identifier === ingredient.specificSelection
       );
       if (ingredientData) {
         selectedIngredients.push({
           cost: ingredientData.pricePerUnit * ingredient.amount,
           ingredient: ingredientData,
-          amount: ingredient.amount
+          amount: ingredient.amount,
+          unit: ingredient.unit
         });
         continue;
       }
@@ -227,7 +229,8 @@ function calculateTotals(drink: DrinkType) {
       selectedIngredients.push({
         cost: ingredientData.pricePerUnit * ingredient.amount,
         ingredient: ingredientData,
-        amount: ingredient.amount
+        amount: ingredient.amount,
+        unit: ingredient.unit
       });
       continue;
     }
@@ -238,7 +241,8 @@ function calculateTotals(drink: DrinkType) {
       selectedIngredients.push({
         cost: ingredientData.pricePerUnit * ingredient.amount,
         ingredient: ingredientData,
-        amount: ingredient.amount
+        amount: ingredient.amount,
+        unit: ingredient.unit
       });
       continue;
     } else {
@@ -251,7 +255,7 @@ function calculateTotals(drink: DrinkType) {
 function uuidv4() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
     var r = (Math.random() * 16) | 0,
-      v = c == "x" ? r : (r & 0x3) | 0x8;
+      v = c === "x" ? r : (r & 0x3) | 0x8;
     return v.toString(16);
   });
 }

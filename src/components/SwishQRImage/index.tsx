@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { styled } from "@glitz/react";
 
 type PropType = {
@@ -7,8 +7,6 @@ type PropType = {
 };
 
 export default (props: PropType) => {
-  const [imageData, setImageData] = useState();
-
   return (
     <styled.Div css={{ paddingBottom: "100%", position: "relative" }}>
       <styled.Img

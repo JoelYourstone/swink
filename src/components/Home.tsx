@@ -37,7 +37,7 @@ const Base = styled.div({
   flexDirection: "column",
   height: "100%",
   marginTop: 100,
-  width: 600,
+  maxWidth: 600,
   margin: {
     x: "auto"
   }

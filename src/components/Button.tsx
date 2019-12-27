@@ -1,7 +1,6 @@
 import React from "react";
 import { styled, StyledProps } from "@glitz/react";
 import { colors } from "../Checkout";
-import { JSXElement } from "@babel/types";
 
 type PropType = StyledProps & {
   onClick: () => any;

@@ -10,20 +10,24 @@ const drinksList: DrinksList = [
         name: "Tequila",
         amount: 4,
         type: "Tequila",
-        defaultSelection: "sauza"
+        specificSelection: "sauza",
+        unit: "cl"
       },
       {
         name: "Cointreau",
         amount: 2,
-        type: "Liquor"
+        type: "Liquor",
+        unit: "cl"
       },
       {
         name: "Lime Juice",
         amount: 3,
         type: "Fresh fruit juice",
-        defaultSelection: "freshlime"
+        specificSelection: "freshlime",
+        unit: "cl"
       },
       {
+        unit: "cl",
         name: "Agave syrup",
         amount: 1,
         type: "Sweetener"
@@ -36,37 +40,43 @@ const drinksList: DrinksList = [
       "https://cdn.diffords.com/contrib/stock-images/2016/12/21/2016eeb430ea202428599e9aabe1ea71ae02.jpg",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "White Rum",
         type: "Rum",
-        defaultSelection: "havana3",
+        specificSelection: "havana3",
         amount: 4
       },
       {
+        unit: "cl",
         name: "Peach Liquor",
         amount: 1.5,
         type: "Liquor",
-        defaultSelection: "peachtree"
+        specificSelection: "peachtree"
       },
       {
+        unit: "",
         name: "Mint Leaves",
         amount: 12,
         type: "Leaves"
       },
       {
+        unit: "cl",
         name: "Lime Juice",
         amount: 4.5,
-        defaultSelection: "freshlime",
+        specificSelection: "freshlime",
         type: "Fresh fruit juice"
       },
       {
+        unit: "cl",
         name: "Pineapple Juice",
         amount: 6,
         type: "Juice"
       },
       {
+        unit: "cl",
         name: "Sugar syrup",
         amount: 1.5,
-        defaultSelection: "agave",
+        specificSelection: "agave",
         type: "Sweetener"
       }
     ]
@@ -77,32 +87,37 @@ const drinksList: DrinksList = [
       "https://cdn.diffords.com/contrib/stock-images/2016/10/28/2016baa3689cf308de1c265e38f0b37ba70c.jpg",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "White Rum",
         amount: 4,
-        defaultSelection: "havana3",
+        specificSelection: "havana3",
         type: "Rum"
       },
       {
+        unit: "cl",
         name: "Absinthe",
         amount: 0.25,
-        defaultSelection: "absinthe",
+        specificSelection: "absinthe",
         type: "Liquor"
       },
       {
+        unit: "cl",
         name: "Lime Juice",
         amount: 2,
-        defaultSelection: "freshlime",
+        specificSelection: "freshlime",
         type: "Fresh fruit juice"
       },
       {
+        unit: "cl",
         name: "Syrup",
         amount: 1,
-        defaultSelection: "agavesyrup",
+        specificSelection: "agavesyrup",
         type: "Sweetener"
       },
       {
+        unit: "spoon",
         amount: 0.5,
-        defaultSelection: "englishmarmelade",
+        specificSelection: "englishmarmelade",
         name: "English Orange Marmelade",
         type: "Liquor"
       }
@@ -114,20 +129,23 @@ const drinksList: DrinksList = [
     name: "White Malaysian",
     ingredientLineItems: [
       {
+        unit: "cl",
         amount: 4,
         name: "Vodka",
         type: "Vodka"
       },
       {
+        unit: "cl",
         amount: 3,
         name: "Kahlúa",
-        defaultSelection: "kahlua",
+        specificSelection: "kahlua",
         type: "Liquor"
       },
       {
+        unit: "cl",
         amount: 8,
         name: "iKaffe",
-        defaultSelection: "ikaffe",
+        specificSelection: "ikaffe",
         type: "Juice"
       }
     ]
@@ -140,36 +158,42 @@ const drinksList: DrinksList = [
       {
         name: "Vodka",
         amount: 4,
+        unit: "cl",
         type: "Vodka"
       },
       {
+        unit: "cl",
         name: "Lemon Juice",
         amount: 0.75,
-        defaultSelection: "freshlemon",
+        specificSelection: "freshlemon",
         type: "Fresh fruit juice"
       },
       {
+        unit: "cl",
         name: "Syrup",
         amount: 0.75,
-        defaultSelection: "agavesyrup",
+        specificSelection: "agavesyrup",
         type: "Sweetener"
       },
       {
+        unit: "",
         name: "Kiwi fruit",
         amount: 1,
-        defaultSelection: "kiwi",
+        specificSelection: "kiwi",
         type: "Other"
       },
       {
+        unit: "cl",
         name: "Sparkling",
         amount: 6,
         type: "Sparkling"
       },
       {
+        unit: "",
         name: "Basil Leaves",
         amount: 2,
         type: "Leaves",
-        defaultSelection: "basil"
+        specificSelection: "basil"
       }
     ]
   },
@@ -179,37 +203,43 @@ const drinksList: DrinksList = [
     name: "Flaming Margarita",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "Tequila",
         amount: 3,
         type: "Tequila",
-        defaultSelection: "calle23"
+        specificSelection: "calle23"
       },
       {
+        unit: "cl",
         name: "Cointreau",
         amount: 1,
         type: "Liquor"
       },
       {
+        unit: "cl",
         name: "Ancho Reyes",
         amount: 2,
         type: "Liquor",
-        defaultSelection: "anchoreyes"
+        specificSelection: "anchoreyes"
       },
       {
+        unit: "cl",
         name: "Lime Juice",
         amount: 3,
         type: "Fresh fruit juice",
-        defaultSelection: "freshlime"
+        specificSelection: "freshlime"
       },
       {
+        unit: "cl",
         name: "Agave syrup",
         amount: 1,
         type: "Sweetener"
       },
       {
+        unit: "",
         name: "Tajin",
         amount: 0,
-        defaultSelection: "tajin",
+        specificSelection: "tajin",
         type: "Other"
       }
     ]
@@ -220,43 +250,50 @@ const drinksList: DrinksList = [
       "http://shake-that.com/wp-content/uploads/2015/07/Singapore-Sling-780x917.jpg",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "Gin",
         type: "Gin",
         amount: 2.5,
-        defaultSelection: "tanqueray"
+        specificSelection: "tanqueray"
       },
       {
+        unit: "cl",
         name: "Port Wine",
         type: "Port",
         amount: 2.5
       },
       {
+        unit: "cl",
         name: "Benedictine",
         amount: 2.5,
-        defaultSelection: "benedictine",
+        specificSelection: "benedictine",
         type: "Liquor"
       },
       {
+        unit: "dashes",
         name: "Angostura Bitters",
         amount: 2,
-        defaultSelection: "angostura",
+        specificSelection: "angostura",
         type: "Bitters"
       },
       {
+        unit: "cl",
         name: "Pineapple Juice",
         amount: 5,
         type: "Juice"
       },
       {
+        unit: "cl",
         name: "Lime Juice",
         amount: 2.5,
-        defaultSelection: "freshlime",
+        specificSelection: "freshlime",
         type: "Fresh fruit juice"
       },
       {
+        unit: "cl",
         name: "Grenadine (optional)",
         amount: 0.5,
-        defaultSelection: "grenadine",
+        specificSelection: "grenadine",
         type: "Liquor"
       }
     ]
@@ -267,32 +304,37 @@ const drinksList: DrinksList = [
     name: "Moonlight",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "Gin",
         amount: 3,
         type: "Gin"
       },
       {
+        unit: "cl",
         name: "Triple Sec",
         amount: 2,
-        defaultSelection: "cointreau",
+        specificSelection: "cointreau",
         type: "Liquor"
       },
       {
+        unit: "cl",
         name: "Créme de Violette",
         amount: 1.5,
-        defaultSelection: "cremedeviolette",
+        specificSelection: "cremedeviolette",
         type: "Liquor"
       },
       {
+        unit: "cl",
         name: "Lime Juice",
         amount: 0.75,
-        defaultSelection: "freshlime",
+        specificSelection: "freshlime",
         type: "Fresh fruit juice"
       },
       {
+        unit: "cl",
         name: "Lemon Juice",
         amount: 0.75,
-        defaultSelection: "freshlemon",
+        specificSelection: "freshlemon",
         type: "Fresh fruit juice"
       }
     ]
@@ -303,29 +345,34 @@ const drinksList: DrinksList = [
       "https://cdn.diffords.com/contrib/stock-images/2017/7/04/201750c47a400dc07fd2ca4f5be453e82829.jpg",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "Gin",
         amount: 2,
         type: "Gin"
       },
       {
+        unit: "cl",
         name: "Lemon Juice",
         amount: 2,
-        defaultSelection: "freshlemon",
+        specificSelection: "freshlemon",
         type: "Fresh fruit juice"
       },
       {
+        unit: "cl",
         name: "Syrup",
         amount: 2,
-        defaultSelection: "agavesyrup",
+        specificSelection: "agavesyrup",
         type: "Sweetener"
       },
       {
+        unit: "cl",
         name: "St Germain",
         amount: 2,
-        defaultSelection: "stgermain",
+        specificSelection: "stgermain",
         type: "Liquor"
       },
       {
+        unit: "cl",
         name: "Sparkling",
         amount: 10,
         type: "Sparkling"
@@ -338,20 +385,23 @@ const drinksList: DrinksList = [
       "https://cdn.diffords.com/contrib/stock-images/2016/1/41/201670d4ba41562cc286c2ef9364977057c9.jpg",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "Rum",
         amount: 5,
         type: "Rum"
       },
       {
+        unit: "cl",
         name: "Syrup",
         amount: 1.5,
-        defaultSelection: "agavesyrup",
+        specificSelection: "agavesyrup",
         type: "Sweetener"
       },
       {
+        unit: "dashes",
         name: "Angostura",
         amount: 1,
-        defaultSelection: "angostura",
+        specificSelection: "angostura",
         type: "Bitters"
       }
     ]
@@ -361,25 +411,29 @@ const drinksList: DrinksList = [
       "https://cdn.diffords.com/contrib/stock-images/2016/3/10/20161cc3133df32007a68af7e2eb6bdb7a38.jpg",
     ingredientLineItems: [
       {
-        defaultSelection: "hendricks",
+        unit: "cl",
+        specificSelection: "hendricks",
         amount: 6,
         name: "Gin",
         type: "Gin"
       },
       {
-        defaultSelection: "freshlemon",
+        unit: "cl",
+        specificSelection: "freshlemon",
         amount: 2,
         name: "Lemon Juice",
         type: "Fresh fruit juice"
       },
       {
-        defaultSelection: "agavesyrup",
+        unit: "cl",
+        specificSelection: "agavesyrup",
         amount: 2,
         name: "Syrup",
         type: "Sweetener"
       },
       {
-        defaultSelection: "basil",
+        unit: "",
+        specificSelection: "basil",
         amount: 6,
         name: "Basil leaves",
         type: "Leaves"
@@ -390,26 +444,30 @@ const drinksList: DrinksList = [
   {
     ingredientLineItems: [
       {
+        unit: "cl",
         amount: 4,
-        defaultSelection: "havana3",
+        specificSelection: "havana3",
         name: "Light Rum",
         type: "Rum"
       },
       {
+        unit: "",
         amount: 6,
-        defaultSelection: "mintleaves",
+        specificSelection: "mintleaves",
         name: "Mint leaves",
         type: "Leaves"
       },
       {
+        unit: "cl",
         amount: 2.25,
-        defaultSelection: "freshlime",
+        specificSelection: "freshlime",
         name: "Lime Juice",
         type: "Fresh fruit juice"
       },
       {
+        unit: "cl",
         amount: 1.87,
-        defaultSelection: "agavesyrup",
+        specificSelection: "agavesyrup",
         name: "Syrup",
         type: "Sweetener"
       }
@@ -422,27 +480,31 @@ const drinksList: DrinksList = [
     name: "Cosmopolitan",
     ingredientLineItems: [
       {
+        unit: "cl",
         amount: 7,
         name: "Lemon Vodka",
-        defaultSelection: "absolutcitron",
+        specificSelection: "absolutcitron",
         type: "Vodka"
       },
       {
+        unit: "cl",
         amount: 3,
         name: "Cointreau",
-        defaultSelection: "cointreau",
+        specificSelection: "cointreau",
         type: "Liquor"
       },
       {
+        unit: "cl",
         amount: 4,
         name: "Cranberry juice",
         type: "Juice"
       },
       {
+        unit: "cl",
         amount: 3,
         name: "Lime juice",
         type: "Fresh fruit juice",
-        defaultSelection: "freshlime"
+        specificSelection: "freshlime"
       }
     ],
     image: ""
@@ -455,27 +517,31 @@ const drinksList: DrinksList = [
   {
     ingredientLineItems: [
       {
+        unit: "cl",
         type: "Rum",
         name: "Light Rum",
         amount: 4,
-        defaultSelection: "havana3"
+        specificSelection: "havana3"
       },
       {
+        unit: "cl",
         type: "Fresh fruit juice",
         amount: 2,
-        defaultSelection: "freshlime",
+        specificSelection: "freshlime",
         name: "Fresh Lime Juice"
       },
       {
+        unit: "cl",
         type: "Sweetener",
         amount: 2,
-        defaultSelection: "agavesyrup",
+        specificSelection: "agavesyrup",
         name: "Syrup"
       },
       {
+        unit: "",
         type: "Other",
         amount: 6,
-        defaultSelection: "raspberries",
+        specificSelection: "raspberries",
         name: "Raspberries"
       }
     ],
@@ -489,21 +555,24 @@ const drinksList: DrinksList = [
       "https://www.hendricksgin.com/assets/Cocktails/2019/Cocktail-Glass-Cut-Outs/838b1e3860/gin-tonic_cocktail__ScaleHeightWzUwMF0.png",
     ingredientLineItems: [
       {
+        unit: "cl",
         name: "Gin",
         amount: 4,
-        defaultSelection: "hendricks",
+        specificSelection: "hendricks",
         type: "Gin"
       },
       {
+        unit: "cl",
         name: "Fentimans Tonic",
         amount: 12,
-        defaultSelection: "fentimans",
+        specificSelection: "fentimans",
         type: "Tonic"
       },
       {
+        unit: "",
         name: "Cucumber slices",
         amount: 3,
-        defaultSelection: "cucumberslice",
+        specificSelection: "cucumberslice",
         type: "Other"
       }
     ]
@@ -512,25 +581,29 @@ const drinksList: DrinksList = [
     name: "Bathtub Gin & Tonic",
     ingredientLineItems: [
       {
+        unit: "cl",
         amount: 4,
-        defaultSelection: "bathtubgin",
+        specificSelection: "bathtubgin",
         name: "Bathtub Gin",
         type: "Gin"
       },
       {
+        unit: "cl",
         amount: 12,
-        defaultSelection: "fevertreemed",
+        specificSelection: "fevertreemed",
         name: "Fever Tree Mediterranean",
         type: "Tonic"
       },
       {
-        defaultSelection: "rosemary",
+        unit: "cl",
+        specificSelection: "rosemary",
         amount: 1,
         name: "Rosemary branch",
         type: "Leaves"
       },
       {
-        defaultSelection: "lemonslice",
+        unit: "",
+        specificSelection: "lemonslice",
         amount: 1,
         name: "Lemon Slice",
         type: "Other"
@@ -545,25 +618,29 @@ const drinksList: DrinksList = [
     name: "Kreatör Jin & Tonic",
     ingredientLineItems: [
       {
+        unit: "cl",
         amount: 4,
-        defaultSelection: "kreatör",
+        specificSelection: "kreatör",
         name: "Gin",
         type: "Gin"
       },
       {
+        unit: "cl",
         amount: 12,
-        defaultSelection: "fevertreeindian",
+        specificSelection: "fevertreeindian",
         name: "Fever Tree Indian Tonic",
         type: "Tonic"
       },
       {
-        defaultSelection: "rosemary",
+        unit: "",
+        specificSelection: "rosemary",
         amount: 1,
         name: "Rosemary branch",
         type: "Leaves"
       },
       {
-        defaultSelection: "appleslice",
+        unit: "",
+        specificSelection: "appleslice",
         amount: 1,
         name: "Apple slice",
         type: "Other"
@@ -578,22 +655,59 @@ const drinksList: DrinksList = [
       {
         name: "Gin",
         amount: 4,
-        defaultSelection: "tanqueray",
+        unit: "cl",
+        specificSelection: "tanqueray",
         type: "Gin"
       },
       {
         type: "Tonic",
         amount: 12,
-        defaultSelection: "fevertreeindian",
+        unit: "cl",
+        specificSelection: "fevertreeindian",
         name: "Tonic"
       },
       {
         name: "Lemon Slice",
         amount: 1,
-        defaultSelection: "lemonslice",
+        unit: "",
+        specificSelection: "lemonslice",
         type: "Other"
       }
     ]
+  },
+  {
+    image:
+      "https://assets.epicurious.com/photos/5577559881ac1e5023673c24/6:4/w_620%2Ch_413/51193080_autumn-gin-sour_6x4.jpg",
+    ingredientLineItems: [
+      {
+        name: "Gin",
+        amount: 6,
+        unit: "cl",
+        type: "Gin",
+        specificSelection: "bombay"
+      },
+      {
+        name: "Syrup",
+        amount: 2,
+        unit: "cl",
+        type: "Sweetener"
+      },
+      {
+        name: "Lemon Juice",
+        amount: 3,
+        unit: "cl",
+        type: "Fresh fruit juice",
+        specificSelection: "freshlemon"
+      },
+      {
+        name: "Aquafaba",
+        amount: 0,
+        unit: "",
+        type: "Other",
+        specificSelection: "aquafaba"
+      }
+    ],
+    name: "Gin sour"
   }
 ];
 

@@ -1,8 +1,7 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import Home from "./components/Home";
 import DrinksList from "./components/DrinksList";
 import Checkout from "./Checkout";
-import { getSettings } from ".";
 export type RouteType = {
   setRoute: (route: RouteState) => void;
   currentRoute: RouteState;
@@ -14,7 +13,6 @@ export type RouteState = {
 };
 
 const App: React.FC = () => {
-  const settings = getSettings();
   const [route, setRoute] = useState<RouteState>({ route: "home", data: {} });
 
   switch (route.route) {

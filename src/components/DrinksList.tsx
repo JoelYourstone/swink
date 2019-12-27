@@ -30,12 +30,9 @@ type DrinkProps = {
 
 const Drink = (props: DrinkProps) => {
   return (
-    <DrinkContainer
-      // onTouchStart={() => props.onCheckout(props.drink)}
-      onClick={() => props.onCheckout(props.drink)}
-    >
+    <DrinkContainer onClick={() => props.onCheckout(props.drink)}>
       <styled.Div
-        css={{ height: 250, display: "flex", justifyContent: "center" }}
+        css={{ height: 150, display: "flex", justifyContent: "center" }}
       >
         <styled.Img
           css={{ maxHeight: "100%", maxWidth: "100%" }}
@@ -54,11 +51,11 @@ const Container = styled.div({});
 
 const DrinkContainer = styled.div({
   cursor: "pointer",
-  flexBasis: 250,
+  flexBasis: 150,
   flexGrow: 0,
   margin: {
-    x: 10,
-    y: 20
+    x: 5,
+    y: 10
   },
   padding: {
     xy: 10
