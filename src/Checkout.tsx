@@ -4,7 +4,7 @@ import { DrinkType, ingredientsList, IngredientType, UnitType } from "./data";
 import SwishQRImage from "./components/SwishQRImage";
 import { styled } from "@glitz/react";
 import Button from "./components/Button";
-import Alternatives from "./components/Alternatives";
+import CheckoutIngredients from "./components/CheckoutIngredients";
 
 export const colors = {
   green: "#5e9f1a !important",
@@ -18,9 +18,9 @@ export default (props: RouteType) => {
   const [checkoutDrink, setCheckoutDrink] = useState<DrinkType>(
     props.currentRoute.data
   );
-  console.log(checkoutDrink);
   const [showInstructions, setShowInstructions] = useState(false);
   const [orderConfirmed, setOrderConfirmed] = useState(false);
+  const [showRecipe, setShowRecipe] = useState(false);
   const orderNumber = useRef(uuidv4().substring(0, 8));
 
   const cart = calculateTotals(checkoutDrink);
@@ -28,6 +28,22 @@ export default (props: RouteType) => {
     Math.round(
       cart.reduce((value, ingredient) => (value += ingredient.cost), 0) * 100
     ) / 100;
+
+  if (showRecipe) {
+    return (
+      <styled.Div css={{ display: "flex", justifyContent: "center" }}>
+        <CheckoutIngredients
+          setRoute={props.setRoute}
+          isRecipe
+          cart={cart}
+          showInstructions={showInstructions}
+          setCheckoutDrink={setCheckoutDrink}
+          setShowInstructions={setShowInstructions}
+          checkoutDrink={checkoutDrink}
+        />
+      </styled.Div>
+    );
+  }
 
   if (orderConfirmed) {
     return (
@@ -51,7 +67,7 @@ export default (props: RouteType) => {
               value="Jag har betalt!"
               onClick={() => {
                 saveOrder(checkoutDrink, cart, totalCost, orderNumber.current);
-                props.setRoute({ route: "drinksList", data: {} });
+                setShowRecipe(true);
               }}
               css={{ marginRight: 10 }}
               type="good"
@@ -110,84 +126,15 @@ export default (props: RouteType) => {
           </styled.Div>
         </CartSummaryContainer>
       </styled.Div>
-      <IngredientsContainer>
-        <h2>Ingredienser</h2>
-        {cart.map((lineItem, lineItemIndex) => {
-          const ingredient = lineItem.ingredient;
-
-          return (
-            <div>
-              <styled.Div
-                css={{
-                  display: "flex",
-                  marginTop: 20,
-                  fontSize: 20,
-                  marginBottom: 10
-                }}
-              >
-                <styled.Div
-                  css={{
-                    flexBasis: 35,
-                    flexShrink: 0,
-                    flexGrow: 0
-                  }}
-                >
-                  {lineItem.amount}
-                </styled.Div>
-                <styled.Div css={{ flexBasis: 60, flexShrink: 0, flexGrow: 0 }}>
-                  {lineItem.unit}
-                </styled.Div>
-                <div>{ingredient.name}</div>
-                <styled.Span
-                  css={{
-                    flex: { grow: 1 },
-                    textAlign: "right",
-                    fontWeight: "bold"
-                  }}
-                >
-                  {Math.round(lineItem.cost * 100) / 100}kr
-                </styled.Span>
-              </styled.Div>
-              {!showInstructions && (
-                <Alternatives
-                  ingredient={ingredient}
-                  lineItem={lineItem}
-                  lineItemIndex={lineItemIndex}
-                  checkoutDrink={checkoutDrink}
-                  setCheckoutDrink={newState => setCheckoutDrink(newState)}
-                />
-              )}
-            </div>
-          );
-        })}
-        {checkoutDrink.instructions && !showInstructions && (
-          <Button
-            onClick={() => setShowInstructions(true)}
-            value="Visa instruktioner"
-            type="good"
-            css={{
-              marginTop: 30
-            }}
-          />
-        )}
-        {showInstructions && (
-          <>
-            <h2>Instruktioner</h2>
-            <ol>
-              {checkoutDrink.instructions &&
-                checkoutDrink.instructions.map(s => <li>{s}</li>)}
-            </ol>
-            <Button
-              onClick={() => setShowInstructions(false)}
-              value="Visa alternativ"
-              type="good"
-              css={{
-                marginTop: 30
-              }}
-            />
-          </>
-        )}
-      </IngredientsContainer>
+      <CheckoutIngredients
+        isRecipe={false}
+        cart={cart}
+        showInstructions={showInstructions}
+        setRoute={props.setRoute}
+        setCheckoutDrink={setCheckoutDrink}
+        setShowInstructions={setShowInstructions}
+        checkoutDrink={checkoutDrink}
+      />
       <IngredientImagesBox>
         {cart.map(s => (
           <styled.Div
@@ -231,10 +178,6 @@ const IngredientImagesBox = styled(BoxWithShadow, {
   width: 250,
   display: "flex",
   flexWrap: "wrap"
-});
-
-const IngredientsContainer = styled(BoxWithShadow, {
-  width: 400
 });
 
 const CartSummaryContainer = styled(BoxWithShadow);
