@@ -18,6 +18,8 @@ export default (props: RouteType) => {
   const [checkoutDrink, setCheckoutDrink] = useState<DrinkType>(
     props.currentRoute.data
   );
+  console.log(checkoutDrink);
+  const [showInstructions, setShowInstructions] = useState(false);
   const [orderConfirmed, setOrderConfirmed] = useState(false);
   const orderNumber = useRef(uuidv4().substring(0, 8));
 
@@ -76,7 +78,7 @@ export default (props: RouteType) => {
       }}
     >
       <styled.Div css={{ width: 400 }}>
-        <BoxWithShadow>
+        <DrinkImageContainer>
           <styled.H2 css={{ marginBottom: 24 }}>{checkoutDrink.name}</styled.H2>
           <styled.Div css={{ textAlign: "center" }}>
             <styled.Img
@@ -84,8 +86,8 @@ export default (props: RouteType) => {
               src={checkoutDrink.image}
             />
           </styled.Div>
-        </BoxWithShadow>
-        <BoxWithShadow>
+        </DrinkImageContainer>
+        <CartSummaryContainer>
           <h2>Totalt:</h2>
           <styled.H1 css={{ textAlign: "center", marginTop: 24 }}>
             {totalCost} kr
@@ -106,9 +108,9 @@ export default (props: RouteType) => {
               onClick={() => props.setRoute({ route: "drinksList", data: {} })}
             />
           </styled.Div>
-        </BoxWithShadow>
+        </CartSummaryContainer>
       </styled.Div>
-      <BoxWithShadow css={{ width: 400 }}>
+      <IngredientsContainer>
         <h2>Ingredienser</h2>
         {cart.map((lineItem, lineItemIndex) => {
           const ingredient = lineItem.ingredient;
@@ -133,7 +135,7 @@ export default (props: RouteType) => {
                   {lineItem.amount}
                 </styled.Div>
                 <styled.Div css={{ flexBasis: 60, flexShrink: 0, flexGrow: 0 }}>
-                  {lineItem}
+                  {lineItem.unit}
                 </styled.Div>
                 <div>{ingredient.name}</div>
                 <styled.Span
@@ -146,18 +148,47 @@ export default (props: RouteType) => {
                   {Math.round(lineItem.cost * 100) / 100}kr
                 </styled.Span>
               </styled.Div>
-              <Alternatives
-                ingredient={ingredient}
-                lineItem={lineItem}
-                lineItemIndex={lineItemIndex}
-                checkoutDrink={checkoutDrink}
-                setCheckoutDrink={newState => setCheckoutDrink(newState)}
-              />
+              {!showInstructions && (
+                <Alternatives
+                  ingredient={ingredient}
+                  lineItem={lineItem}
+                  lineItemIndex={lineItemIndex}
+                  checkoutDrink={checkoutDrink}
+                  setCheckoutDrink={newState => setCheckoutDrink(newState)}
+                />
+              )}
             </div>
           );
         })}
-      </BoxWithShadow>
-      <BoxWithShadow css={{ width: 250, display: "flex", flexWrap: "wrap" }}>
+        {checkoutDrink.instructions && !showInstructions && (
+          <Button
+            onClick={() => setShowInstructions(true)}
+            value="Visa instruktioner"
+            type="good"
+            css={{
+              marginTop: 30
+            }}
+          />
+        )}
+        {showInstructions && (
+          <>
+            <h2>Instruktioner</h2>
+            <ol>
+              {checkoutDrink.instructions &&
+                checkoutDrink.instructions.map(s => <li>{s}</li>)}
+            </ol>
+            <Button
+              onClick={() => setShowInstructions(false)}
+              value="Visa alternativ"
+              type="good"
+              css={{
+                marginTop: 30
+              }}
+            />
+          </>
+        )}
+      </IngredientsContainer>
+      <IngredientImagesBox>
         {cart.map(s => (
           <styled.Div
             css={{
@@ -181,7 +212,7 @@ export default (props: RouteType) => {
             />
           </styled.Div>
         ))}
-      </BoxWithShadow>
+      </IngredientImagesBox>
     </styled.Div>
   );
 };
@@ -195,6 +226,20 @@ const BoxWithShadow = styled.div({
     xy: 24
   }
 });
+
+const IngredientImagesBox = styled(BoxWithShadow, {
+  width: 250,
+  display: "flex",
+  flexWrap: "wrap"
+});
+
+const IngredientsContainer = styled(BoxWithShadow, {
+  width: 400
+});
+
+const CartSummaryContainer = styled(BoxWithShadow);
+
+const DrinkImageContainer = styled(BoxWithShadow);
 
 function calculateTotals(drink: DrinkType) {
   const selectedIngredients: Array<{

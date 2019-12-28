@@ -49,7 +49,7 @@ export default (props: PropType) => {
           const ingrientLineItems = [...checkoutDrink.ingredientLineItems];
           const newLineItem = {
             ...ingrientLineItems[lineItemIndex],
-            defaultSelection: alternativeIngredientData.identifier
+            specificSelection: alternativeIngredientData.identifier
           };
           ingrientLineItems.splice(lineItemIndex, 1, newLineItem);
 

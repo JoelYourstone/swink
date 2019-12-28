@@ -319,22 +319,27 @@ const drinksList: DrinksList = [
     addedBy: "Joel"
   },
   {
-    name: "Låtsasvuxen",
+    name: "Låtsasvuxen (Rum old fashioned)",
     image:
       "https://cdn.diffords.com/contrib/stock-images/2016/1/41/201670d4ba41562cc286c2ef9364977057c9.jpg",
+    instructions: [
+      "Stir rum with three ice cubes in a glass for 20 seconds",
+      "Add sugar & bitters and two more ice cubes. Stir for 30 seconds",
+      "Garnish with orange zest"
+    ],
     ingredientLineItems: [
       { unit: "cl", name: "Rum", amount: 5, type: "Rum" },
       {
         unit: "cl",
         name: "Syrup",
-        amount: 1.5,
+        amount: 1,
         specificSelection: "agavesyrup",
         type: "Sweetener"
       },
       {
         unit: "dashes",
         name: "Angostura",
-        amount: 1,
+        amount: 4,
         specificSelection: "angostura",
         type: "Bitters"
       }
