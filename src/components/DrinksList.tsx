@@ -1,13 +1,46 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { RouteType } from "../App";
 import { styled } from "@glitz/react";
 import drinks, { DrinkType } from "../data";
+import InputOutlined from "./InputOutlined";
 
 export default (props: RouteType) => {
+  console.log("render");
+
+  const inputRef = useRef<any>();
+
+  useEffect(() => {
+    console.log(inputRef.current);
+    (inputRef.current as HTMLInputElement).focus();
+  }, []);
+
+  const [filter, setFilter] = useState("");
+  let filteredDrinks = drinks;
+  if (filter) {
+    filteredDrinks = drinks.filter(drink => {
+      if (drink.name.toLowerCase().includes(filter.toLowerCase())) {
+        return true;
+      }
+      let matchIngredient = drink.ingredientLineItems.find(ingredient => {
+        if (ingredient.name.toLowerCase().includes(filter.toLowerCase())) {
+          return true;
+        }
+      });
+      return !!matchIngredient;
+    });
+  }
+
   return (
     <Container>
+      <Header>
+        <InputOutlined
+          placeholder="Filtrera på drink/ingrediens"
+          onChange={phrase => setFilter(phrase)}
+          elementRef={el => (inputRef.current = el)}
+        />
+      </Header>
       <ListContainer>
-        {drinks.map(drink => {
+        {filteredDrinks.map(drink => {
           return (
             <Drink
               key={drink.name}
@@ -48,6 +81,11 @@ const Drink = (props: DrinkProps) => {
 };
 
 const Container = styled.div({});
+
+const Header = styled.div({
+  boxShadow: "0 2px 16px 0 rgba(0,0,0,0.18)",
+  height: 60
+});
 
 const DrinkContainer = styled.div({
   cursor: "pointer",
