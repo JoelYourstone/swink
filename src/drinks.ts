@@ -23,7 +23,7 @@ const drinksList: DrinksList = [
       },
       { unit: "cl", name: "Agave syrup", amount: 1, type: "Sweetener" }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel", "Daniel"]
   },
   {
     name: "Missionary's Downfall",
@@ -61,7 +61,7 @@ const drinksList: DrinksList = [
         type: "Sweetener"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     name: "Hemingway Breakfast",
@@ -104,7 +104,7 @@ const drinksList: DrinksList = [
         type: "Liquor"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -127,7 +127,7 @@ const drinksList: DrinksList = [
         type: "Juice"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -165,7 +165,7 @@ const drinksList: DrinksList = [
         specificSelection: "basil"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -203,7 +203,7 @@ const drinksList: DrinksList = [
         type: "Other"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     name: "Singapore Sling",
@@ -248,7 +248,7 @@ const drinksList: DrinksList = [
         type: "Liquor"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -285,7 +285,7 @@ const drinksList: DrinksList = [
         type: "Fresh fruit juice"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     name: "French 76",
@@ -316,7 +316,7 @@ const drinksList: DrinksList = [
       },
       { unit: "cl", name: "Sparkling", amount: 10, type: "Sparkling" }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     name: "Låtsasvuxen (Rum old fashioned)",
@@ -344,7 +344,7 @@ const drinksList: DrinksList = [
         type: "Bitters"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -380,7 +380,7 @@ const drinksList: DrinksList = [
       }
     ],
     name: "Gin Basil Smash",
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     ingredientLineItems: [
@@ -416,7 +416,7 @@ const drinksList: DrinksList = [
     image:
       "https://d32miag6ta013h.cloudfront.net/master_cocktails/185/en-gl/small/bacardi-mojito_sml_580x820..png",
     name: "Mojito",
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     name: "Cosmopolitan",
@@ -445,9 +445,14 @@ const drinksList: DrinksList = [
       }
     ],
     image: "",
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
-  { name: "Jungle Bird", ingredientLineItems: [], image: "", addedBy: "Joel" },
+  {
+    name: "Jungle Bird",
+    ingredientLineItems: [],
+    image: "",
+    ownedBy: ["Joel"]
+  },
   {
     ingredientLineItems: [
       {
@@ -482,7 +487,7 @@ const drinksList: DrinksList = [
     image:
       "https://cdn.diffords.com/contrib/stock-images/2018/10/5bd1de632763b.jpg",
     name: "Raspberry Daiquiri",
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     name: "Hendricks Gin & Tonic",
@@ -511,7 +516,7 @@ const drinksList: DrinksList = [
         type: "Other"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     name: "Bathtub Gin & Tonic",
@@ -547,7 +552,7 @@ const drinksList: DrinksList = [
     ],
     image:
       "https://daisiesandpie.co.uk/wp-content/uploads/2019/07/Abelforths-bathtub-gin-and-tonic-with-lemon-and-rosemary.jpg",
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -583,7 +588,7 @@ const drinksList: DrinksList = [
         type: "Other"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -612,7 +617,7 @@ const drinksList: DrinksList = [
         type: "Other"
       }
     ],
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
   },
   {
     image:
@@ -642,7 +647,161 @@ const drinksList: DrinksList = [
       }
     ],
     name: "Gin sour",
-    addedBy: "Joel"
+    ownedBy: ["Joel"]
+  },
+  {
+    ownedBy: ["Daniel"],
+    name: "Red Russchian",
+    image:
+      "https://drinkgeneratorn.schweppes.se/uploads/89527b5a84da788c8d0c921342484115.jpg",
+    ingredientLineItems: [
+      {
+        name: "Gin",
+        amount: 4,
+        unit: "cl",
+        type: "Gin",
+        specificSelection: "tanqueray"
+      },
+      {
+        name: "Creme de cassis",
+        specificSelection: "cremedecasis",
+        amount: 2,
+        type: "Liquor",
+        unit: "cl"
+      },
+      {
+        name: "Schweppes Russchian",
+        amount: 0,
+        unit: "top",
+        type: "Other",
+        specificSelection: "schweppesrusschian"
+      }
+    ]
+  },
+  {
+    name: "Jungle Bird",
+    ownedBy: ["Daniel"],
+    image:
+      "https://cdn.liquor.com/wp-content/uploads/2016/06/15162422/jungle-bird-720x720-recipe.jpg",
+    ingredientLineItems: [
+      {
+        amount: 4.5,
+        name: "Rum",
+        type: "Rum",
+        unit: "cl",
+        specificSelection: "plantationbarbados"
+      },
+      {
+        name: "Pineapple Juice",
+        amount: 4.5,
+        type: "Juice",
+        unit: "cl"
+      },
+      {
+        amount: 1.5,
+        name: "Campari",
+        type: "Liquor",
+        unit: "cl",
+        specificSelection: "campari"
+      },
+      {
+        amount: 1,
+        name: "Syrup",
+        type: "Sweetener",
+        unit: "cl"
+      },
+      {
+        amount: 1,
+        name: "Lime Juice",
+        type: "Fresh fruit juice",
+        unit: "cl",
+        specificSelection: "freshlime"
+      }
+    ]
+  },
+  {
+    name: "Mai Tai",
+    ownedBy: ["Daniel"],
+    image: "https://cdn1.tasteline.com/8797_Mai-Tai-klassisk.jpg",
+    ingredientLineItems: [
+      {
+        name: "Rum",
+        amount: 4,
+        type: "Rum",
+        unit: "cl",
+        specificSelection: "plantationbarbados"
+      },
+      {
+        amount: 2,
+        name: "Triple Sec",
+        type: "Liquor",
+        unit: "cl",
+        specificSelection: "cointreau"
+      },
+      {
+        amount: 0.75,
+        name: "Disaronno",
+        type: "Liquor",
+        unit: "cl",
+        specificSelection: "disaronno"
+      },
+      {
+        amount: 4,
+        name: "Lime Juice",
+        type: "Fresh fruit juice",
+        unit: "cl",
+        specificSelection: "freshlime"
+      },
+      {
+        amount: 2,
+        name: "Pomegrenate Juice",
+        type: "Juice",
+        unit: "cl",
+        specificSelection: "pomegrenatejuice"
+      },
+      {
+        amount: 0,
+        name: "Pineapple juice",
+        type: "Juice",
+        unit: "top",
+        specificSelection: "pineapplejuice"
+      }
+    ]
+  },
+  {
+    ownedBy: ["Daniel"],
+    image:
+      "https://cdn.liquor.com/wp-content/uploads/2016/09/16091143/bramble-720x720-recipe.jpg",
+    ingredientLineItems: [
+      {
+        name: "Gin",
+        amount: 4,
+        type: "Gin",
+        unit: "cl",
+        specificSelection: "tanqueray"
+      },
+      {
+        name: "Chambord",
+        amount: 4,
+        type: "Liquor",
+        unit: "cl",
+        specificSelection: "chambord"
+      },
+      {
+        name: "Lemon Juice",
+        amount: 2,
+        type: "Fresh fruit juice",
+        unit: "cl",
+        specificSelection: "freshlemon"
+      },
+      {
+        amount: 2,
+        name: "Syrup",
+        type: "Sweetener",
+        unit: "cl"
+      }
+    ],
+    name: "Bramble"
   }
 ];
 

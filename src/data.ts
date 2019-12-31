@@ -1,6 +1,13 @@
 import drinks from "./drinks";
 
-export type UnitType = "cl" | "squirt" | "fresh" | "dashes" | "spoon" | "";
+export type UnitType =
+  | "cl"
+  | "squirt"
+  | "fresh"
+  | "dashes"
+  | "spoon"
+  | ""
+  | "top";
 type IngredientTypeType =
   | "Tequila"
   | "Liquor"
@@ -32,7 +39,7 @@ export type IngredientLineItem = {
 export type DrinkType = {
   name: string;
   image: string;
-  addedBy: string;
+  ownedBy: string[];
   instructions?: string[];
   ingredientLineItems: Array<IngredientLineItem>;
 };
@@ -76,8 +83,7 @@ export const ingredientsList: IngredientsListType = [
     name: "Fresh Lime Juice",
     pricePerUnit: 3,
     type: "Fresh fruit juice",
-    image:
-      "https://cdn.shopify.com/s/files/1/2336/3219/products/shutterstock_188169533bearsss_x850.jpg?v=1554664732"
+    image: "https://opella.se/PICTURE/1927-78-lime.jpg"
   },
   {
     identifier: "agave",
@@ -766,6 +772,30 @@ export const ingredientsList: IngredientsListType = [
     name: "Aquafaba",
     pricePerUnit: 0,
     type: "Other"
+  },
+  {
+    identifier: "schweppesrusschian",
+    image:
+      "https://assets.icanet.se/t_product_large_v1,f_auto/7310401003276.jpg",
+    name: "Schweppes Russchian",
+    pricePerUnit: 0,
+    type: "Other"
+  },
+  {
+    identifier: "pomegrenatejuice",
+    image:
+      "https://cdn02.plentymarkets.com/tu2vlz7tlui3/item/images/990306/full/RUBICON-POMEGRANATE-JUICE-DRINK-1-Liter-990306.jpg",
+    type: "Juice",
+    name: "Pomegrenate Juice",
+    pricePerUnit: 0
+  },
+  {
+    identifier: "thekraken",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/lkhkp6etd3m0xs36yhyr/674520.jpg",
+    name: "The Kraken Rum",
+    pricePerUnit: 319 / 70,
+    type: "Rum"
   }
 ];
 

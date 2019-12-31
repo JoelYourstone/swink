@@ -28,6 +28,7 @@ export default function InputOutlined(props: PropType) {
   return (
     <TextField
       label={props.placeholder}
+      style={{ width: 300 }}
       leadingIcon={<MaterialIcon role="button" icon="search" />}
     >
       <Input

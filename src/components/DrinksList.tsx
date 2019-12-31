@@ -36,7 +36,7 @@ export default (props: RouteType) => {
       }
     });
 
-    if (userFilter !== "ALL" && drink.addedBy !== userFilter) {
+    if (userFilter !== "ALL" && !drink.ownedBy.includes(userFilter)) {
       shouldIncludeThisDrink = false;
     }
 
