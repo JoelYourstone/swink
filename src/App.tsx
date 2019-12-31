@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Home from "./components/Home";
 import DrinksList from "./components/DrinksList";
 import Checkout from "./Checkout";
+import Settings from "./components/Settings";
 export type RouteType = {
   setRoute: (route: RouteState) => void;
   currentRoute: RouteState;
@@ -22,6 +23,8 @@ const App: React.FC = () => {
       return <DrinksList setRoute={setRoute} currentRoute={route} />;
     case "checkout":
       return <Checkout setRoute={setRoute} currentRoute={route} />;
+    case "settings":
+      return <Settings setRoute={setRoute} currentRoute={route} />;
     default:
       return <h1>404</h1>;
   }

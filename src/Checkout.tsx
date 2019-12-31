@@ -5,6 +5,7 @@ import SwishQRImage from "./components/SwishQRImage";
 import { styled } from "@glitz/react";
 import Button from "./components/Button";
 import CheckoutIngredients from "./components/CheckoutIngredients";
+import { getSettings } from "./components/Settings";
 
 export const colors = {
   green: "#5e9f1a !important",
@@ -15,6 +16,7 @@ export const colors = {
 };
 
 export default (props: RouteType) => {
+  const settings = getSettings();
   const [checkoutDrink, setCheckoutDrink] = useState<DrinkType>(
     props.currentRoute.data
   );
@@ -60,6 +62,7 @@ export default (props: RouteType) => {
           <SwishQRImage
             text={checkoutDrink.name + ", " + orderNumber.current}
             value={totalCost}
+            number={settings.swishNumber}
           />
 
           <styled.Div css={{ display: "flex", justifyContent: "center" }}>

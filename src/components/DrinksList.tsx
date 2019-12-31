@@ -4,10 +4,20 @@ import { styled } from "@glitz/react";
 import drinks, { DrinkType } from "../data";
 import InputOutlined from "./InputOutlined";
 
-export default (props: RouteType) => {
-  console.log("render");
+import Radio, { NativeRadioControl } from "@material/react-radio";
+import "@material/react-radio/dist/radio.css";
 
+export default (props: RouteType) => {
   const inputRef = useRef<any>();
+  const [userFilter, setUserFilterState] = useState(
+    localStorage.getItem("userFilter") || "ALL"
+  );
+  console.log(userFilter);
+
+  function setUserFilter(filter: string) {
+    setUserFilterState(filter);
+    localStorage.setItem("userFilter", filter);
+  }
 
   useEffect(() => {
     console.log(inputRef.current);
@@ -15,20 +25,23 @@ export default (props: RouteType) => {
   }, []);
 
   const [filter, setFilter] = useState("");
-  let filteredDrinks = drinks;
-  if (filter) {
-    filteredDrinks = drinks.filter(drink => {
-      if (drink.name.toLowerCase().includes(filter.toLowerCase())) {
+  let filteredDrinks = drinks.filter(drink => {
+    let shouldIncludeThisDrink = false;
+    if (drink.name.toLowerCase().includes(filter.toLowerCase())) {
+      shouldIncludeThisDrink = true;
+    }
+    shouldIncludeThisDrink = !!drink.ingredientLineItems.find(ingredient => {
+      if (ingredient.name.toLowerCase().includes(filter.toLowerCase())) {
         return true;
       }
-      let matchIngredient = drink.ingredientLineItems.find(ingredient => {
-        if (ingredient.name.toLowerCase().includes(filter.toLowerCase())) {
-          return true;
-        }
-      });
-      return !!matchIngredient;
     });
-  }
+
+    if (userFilter !== "ALL" && drink.addedBy !== userFilter) {
+      shouldIncludeThisDrink = false;
+    }
+
+    return shouldIncludeThisDrink;
+  });
 
   return (
     <Container>
@@ -38,6 +51,35 @@ export default (props: RouteType) => {
           onChange={phrase => setFilter(phrase)}
           elementRef={el => (inputRef.current = el)}
         />
+        <UserSelector>
+          <Radio label="Alla" key="alla">
+            <NativeRadioControl
+              name="userfilter"
+              value="ALL"
+              id="alla"
+              checked={userFilter === "ALL"}
+              onChange={e => setUserFilter((e.target as any).value)}
+            />
+          </Radio>
+          <Radio label="Joel" key="joel">
+            <NativeRadioControl
+              name="userfilter"
+              value="Joel"
+              id="joel"
+              checked={userFilter === "Joel"}
+              onChange={e => setUserFilter((e.target as any).value)}
+            />
+          </Radio>
+          <Radio label="Daniel" key="daniel">
+            <NativeRadioControl
+              name="userfilter"
+              value="Daniel"
+              id="daniel"
+              checked={userFilter === "Daniel"}
+              onChange={e => setUserFilter((e.target as any).value)}
+            />
+          </Radio>
+        </UserSelector>
       </Header>
       <ListContainer>
         {filteredDrinks.map(drink => {
@@ -80,11 +122,18 @@ const Drink = (props: DrinkProps) => {
   );
 };
 
+const UserSelector = styled.div({
+  marginRight: 30,
+  marginTop: 10
+});
+
 const Container = styled.div({});
 
 const Header = styled.div({
   boxShadow: "0 2px 16px 0 rgba(0,0,0,0.18)",
-  height: 60
+  height: 60,
+  display: "flex",
+  justifyContent: "space-between"
 });
 
 const DrinkContainer = styled.div({

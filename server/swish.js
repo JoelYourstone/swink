@@ -6,6 +6,7 @@ var request = require("request");
 app.get("/", async (req, res) => {
   const amount = req.query.amount;
   const text = req.query.text;
+  const number = req.query.number;
   const url = "https://mpc.getswish.net/qrg-swish/api/v1/prefilled";
   request
     .post({
@@ -19,7 +20,7 @@ app.get("/", async (req, res) => {
           editable: false
         },
         payee: {
-          value: "0703133780",
+          value: number,
           editable: false
         },
         amount: {

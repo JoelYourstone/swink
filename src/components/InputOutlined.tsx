@@ -6,10 +6,11 @@ type PropType = {
   placeholder: string;
   onChange: (newValue: string) => void;
   elementRef?: (el: HTMLInputElement) => void;
+  initialValue?: string;
 };
 
 export default function InputOutlined(props: PropType) {
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(props.initialValue || "");
 
   const el = useRef<any>(null);
 

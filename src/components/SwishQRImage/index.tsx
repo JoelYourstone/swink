@@ -4,6 +4,7 @@ import { styled } from "@glitz/react";
 type PropType = {
   value: number;
   text: string;
+  number: string;
 };
 
 export default (props: PropType) => {
@@ -12,7 +13,12 @@ export default (props: PropType) => {
       <styled.Img
         css={{ width: "100%", position: "absolute" }}
         src={
-          "http://localhost:3001?amount=" + props.value + "&text=" + props.text
+          "http://localhost:3001?amount=" +
+          props.value +
+          "&text=" +
+          props.text +
+          "&number=" +
+          props.number
         }
       />
     </styled.Div>

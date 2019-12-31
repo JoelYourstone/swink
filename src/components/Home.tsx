@@ -1,8 +1,18 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { styled } from "@glitz/react";
 import { RouteType } from "../App";
+import { getSettings, SettingsType } from "./Settings";
 
 export default (props: RouteType) => {
+  const settings = getSettings();
+
+  useEffect(() => {
+    const settings = getSettings();
+    if (!settings.swishNumber || !settings.user) {
+      props.setRoute({ route: "settings", data: {} });
+    }
+  }, []);
+
   return (
     <Base>
       <Selection
@@ -10,7 +20,11 @@ export default (props: RouteType) => {
       >
         Jag vill ha en drink!
       </Selection>
-      <Selection>Jag vill kolla på senaste ordrar</Selection>
+      <Selection
+        onClick={() => props.setRoute({ route: "settings", data: {} })}
+      >
+        Användare: {settings.user}, byt användare!
+      </Selection>
       <Selection>Jag vill ??</Selection>
     </Base>
   );

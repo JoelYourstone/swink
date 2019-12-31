@@ -7,6 +7,8 @@
     "@glitz/react": "^2.0.10",
     "@glitz/transformers": "^2.0.8",
     "@material/react-material-icon": "^0.15.0",
+    "@material/react-radio": "^0.15.0",
+    "@material/react-select": "^0.15.0",
     "@material/react-text-field": "^0.15.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.4",
