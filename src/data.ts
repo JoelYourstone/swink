@@ -7,7 +7,10 @@ export type UnitType =
   | "dashes"
   | "spoon"
   | ""
-  | "top";
+  | "top"
+  | "pieces"
+  | "g"
+  | "spray";
 type IngredientTypeType =
   | "Tequila"
   | "Liquor"
@@ -27,7 +30,10 @@ type IngredientTypeType =
   | "Sparkling"
   | "Brandy"
   | "Vermouth"
-  | "Juice";
+  | "Juice"
+  | "Glögg"
+  | "Ginger Beer"
+  | "Soft Drink";
 export type DrinksList = Array<DrinkType>;
 export type IngredientLineItem = {
   name: string;
@@ -79,6 +85,22 @@ export const ingredientsList: IngredientsListType = [
       "https://sb-product-media-prod.azureedge.net/productimages/562/562_800.png"
   },
   {
+    identifier: "midori",
+    name: "Midori",
+    pricePerUnit: 149 / 50,
+    type: "Liquor",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/ksg9adcmwe340frch3ce/534630.jpg"
+  },
+  {
+    identifier: "pernod",
+    name: "Pernod",
+    pricePerUnit: 273 / 70,
+    type: "Liquor",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/95wy8tfw0sorr4f92wx0/583.jpg"
+  },
+  {
     identifier: "freshlime",
     name: "Fresh Lime Juice",
     pricePerUnit: 3,
@@ -92,6 +114,30 @@ export const ingredientsList: IngredientsListType = [
     type: "Sweetener",
     image:
       "https://assets.icanet.se/t_product_large_v1,f_auto/3088542506508.jpg"
+  },
+  {
+    identifier: "simplesyrup",
+    name: "Simple syrup",
+    pricePerUnit: 0,
+    type: "Sweetener",
+    image:
+      "https://images-na.ssl-images-amazon.com/images/I/71ugAPdmMGL._SL1500_.jpg"
+  },
+  {
+    identifier: "honeysyrup",
+    name: "Honey syrup",
+    pricePerUnit: 0,
+    type: "Sweetener",
+    image:
+      "https://kitchenswagger.com/wp-content/uploads/2019/08/bees-knees-cocktail2.jpg"
+  },
+  {
+    identifier: "rosemarycinnamonhoneysyrup",
+    name: "Rosemary cinnamon honey syrup",
+    pricePerUnit: 0,
+    type: "Sweetener",
+    image:
+      "https://www.growforagecookferment.com/wp-content/uploads/2019/12/rosemary-honey-syrup.jpg"
   },
   {
     identifier: "freshlemon",
@@ -124,6 +170,22 @@ export const ingredientsList: IngredientsListType = [
     type: "Rum",
     image:
       "https://sb-product-media-prod.azureedge.net/productimages/21955588/21955588_800.png"
+  },
+  {
+    identifier: "bacardiblanca",
+    name: "Bacardi Blanca",
+    pricePerUnit: 249 / 70,
+    type: "Rum",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/vz0mlilro2jyvemj5f75/516.jpg"
+  },
+  {
+    identifier: "bacardirazz",
+    name: "Bacardi Razz",
+    pricePerUnit: 236 / 70,
+    type: "Rum",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/5976k7n1e9w6wczy6mdb/46581.jpg"
   },
   {
     identifier: "peachtree",
@@ -347,6 +409,14 @@ export const ingredientsList: IngredientsListType = [
     type: "Liquor"
   },
   {
+    identifier: "elderflowerdekuyper",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/k671yot60qlco2k89wu1/744966.jpg",
+    name: "De Kuyper Elderflower Liquor",
+    pricePerUnit: 185 / 70,
+    type: "Liquor"
+  },
+  {
     identifier: "drycuracao",
     image:
       "https://cdn2.masterofmalt.com/liqueurs/p-2813/pierre-ferrand/pierre-ferrand-dry-curacao-liqueur.jpg?ss=2.0",
@@ -406,6 +476,22 @@ export const ingredientsList: IngredientsListType = [
       "https://sb-product-media-prod.azureedge.net/productimages/292050/292050_800.png",
     name: "Johnnie Walker Black Label",
     pricePerUnit: 359 / 70,
+    type: "Whisky"
+  },
+  {
+    identifier: "bowmore",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/v0qklcv2pmoybh0o8jzs/2325650.jpg",
+    name: "Bowmore Single Malt",
+    pricePerUnit: 199 / 35,
+    type: "Whisky"
+  },
+  {
+    identifier: "jimbeanbourbon",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/56otcelm9pc3sp8oye45/430.jpg",
+    name: "Jim Bean Bourbon",
+    pricePerUnit: 259 / 70,
     type: "Whisky"
   },
   {
@@ -703,6 +789,14 @@ export const ingredientsList: IngredientsListType = [
     type: "Tonic"
   },
   {
+    identifier: "schweppespremium",
+    image:
+      "https://sgfm.elcorteingles.es/SGFM/dctm/MEDIA03/201708/25/00113342700476____2__1200x1200.jpg",
+    name: "Schweppes Premium Tonic",
+    pricePerUnit: 15 / 20,
+    type: "Tonic"
+  },
+  {
     identifier: "rosemary",
     image:
       "https://cdn.shopify.com/s/files/1/0156/0137/products/rosemary-1200x960.jpg?v=1522850208",
@@ -767,6 +861,14 @@ export const ingredientsList: IngredientsListType = [
     type: "Vodka"
   },
   {
+    identifier: "absolutvanilla",
+    image:
+      "https://static.systembolaget.se/imagelibrary/publishedmedia/enwzx12hz4drhmpzy0pv/43582.jpg",
+    name: "Absolut Vanilj",
+    pricePerUnit: 255 / 70,
+    type: "Vodka"
+  },
+  {
     identifier: "aquafaba",
     image: "",
     name: "Aquafaba",
@@ -782,11 +884,19 @@ export const ingredientsList: IngredientsListType = [
     type: "Other"
   },
   {
-    identifier: "pomegrenatejuice",
+    identifier: "sprite",
+    image:
+      "https://www.pricerunner.se/product/640x640/1598180272/Coca-Cola-Sprite-Lemon-Lime-Soda.jpg?c=0.7",
+    name: "Sprite",
+    pricePerUnit: 0,
+    type: "Soft Drink"
+  },
+  {
+    identifier: "Pomegranatejuice",
     image:
       "https://cdn02.plentymarkets.com/tu2vlz7tlui3/item/images/990306/full/RUBICON-POMEGRANATE-JUICE-DRINK-1-Liter-990306.jpg",
     type: "Juice",
-    name: "Pomegrenate Juice",
+    name: "Pomegranate Juice",
     pricePerUnit: 0
   },
   {
@@ -796,7 +906,49 @@ export const ingredientsList: IngredientsListType = [
     name: "The Kraken Rum",
     pricePerUnit: 319 / 70,
     type: "Rum"
-  }
+  },
+  {
+    identifier: "blossa",
+    image: "https://static.systembolaget.se/imagelibrary/publishedmedia/3vz1fq2i4o0yi7h874vj/2680.jpg",
+    name: "Blossa glögg",
+    pricePerUnit: 87 / 75,
+    type: "Glögg"
+  },
+  {
+    identifier: "alcfreeblossa",
+    image: "https://static.systembolaget.se/imagelibrary/publishedmedia/ns4yqho4lxd0f4phluny/1118767.jpg",
+    name: "Blossa alcohol free glögg",
+    pricePerUnit: 39 / 75,
+    type: "Glögg"
+  },
+  {
+    identifier: "gingerbeer",
+    image: "https://static.systembolaget.se/imagelibrary/publishedmedia/69l2wu00ccwjeu9o6tqn/642806.jpg",
+    name: "Ginger beer",
+    pricePerUnit: 22 / 33,
+    type: "Ginger Beer"
+  },
+  {
+    identifier: "alcfreegingerbeer",
+    image: "https://d2rfo6yapuixuu.cloudfront.net/h84/h4d/9146124894238/5010134913935_1527847519235_master_axfood_400",
+    name: "Alcohol free ginger beer",
+    pricePerUnit: 20 / 33,
+    type: "Ginger Beer"
+  },
+  {
+    identifier: "frozenstrawberries",
+    image: "https://res.cloudinary.com/coopsverige/image/upload/d_cooponline:missingimage:missing-image.png,fl_progressive,q_90,c_lpad,w_330,h_330/q_auto,f_auto//362234.jpg",
+    name: "Frozen Strawberries",
+    pricePerUnit: 16 / 225,
+    type: "Other"
+  },
+  {
+    identifier: "crushedice",
+    image: "https://www.tuckshop.sg/wp-content/uploads/2015/12/Crushed-Ice-600x574.jpg",
+    name: "Crushed Ice",
+    pricePerUnit: 0,
+    type: "Other"
+  },
 ];
 
 export default drinks;
