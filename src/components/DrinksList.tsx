@@ -82,7 +82,15 @@ export default (props: RouteType) => {
         </UserSelector>
       </Header>
       <ListContainer>
-        {filteredDrinks.map(drink => {
+        {filteredDrinks.sort((drink1, drink2) => {
+          if (drink1.name > drink2.name) {
+            return 1;
+          }
+          if (drink1.name < drink2.name) {
+            return -1;
+          }
+          return 0;
+        }).map(drink => {
           return (
             <Drink
               key={drink.name}
