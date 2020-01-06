@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/swink/static/css/main.69eda509.chunk.css",
+    "main.js": "/swink/static/js/main.7a9fd3b7.chunk.js",
+    "main.js.map": "/swink/static/js/main.7a9fd3b7.chunk.js.map",
+    "runtime~main.js": "/swink/static/js/runtime~main.389201ce.js",
+    "runtime~main.js.map": "/swink/static/js/runtime~main.389201ce.js.map",
+    "static/css/2.797a6756.chunk.css": "/swink/static/css/2.797a6756.chunk.css",
+    "static/js/2.9248581c.chunk.js": "/swink/static/js/2.9248581c.chunk.js",
+    "static/js/2.9248581c.chunk.js.map": "/swink/static/js/2.9248581c.chunk.js.map",
+    "index.html": "/swink/index.html",
+    "precache-manifest.87c85abb2db849680bc23e71a531e4a4.js": "/swink/precache-manifest.87c85abb2db849680bc23e71a531e4a4.js",
+    "service-worker.js": "/swink/service-worker.js",
+    "static/css/2.797a6756.chunk.css.map": "/swink/static/css/2.797a6756.chunk.css.map",
+    "static/css/main.69eda509.chunk.css.map": "/swink/static/css/main.69eda509.chunk.css.map"
+  }
+}
