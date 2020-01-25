@@ -13,7 +13,8 @@ export default (props: PropType) => {
       <styled.Img
         css={{ width: "100%", position: "absolute" }}
         src={
-          "http://localhost:3001?amount=" +
+          "http://" + document.location.hostname
++":3001?amount=" +
           props.value +
           "&text=" +
           props.text +
