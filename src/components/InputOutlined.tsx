@@ -1,6 +1,7 @@
 import React, { useState, FormEvent, useRef } from "react";
 import TextField, { HelperText, Input } from "@material/react-text-field";
 import MaterialIcon from "@material/react-material-icon";
+import { styled, StyledProps } from "@glitz/react";
 
 type PropType = {
   placeholder: string;
@@ -9,7 +10,7 @@ type PropType = {
   initialValue?: string;
 };
 
-export default function InputOutlined(props: PropType) {
+export default styled(function InputOutlined(props: PropType & StyledProps) {
   const [value, setValue] = useState(props.initialValue || "");
 
   const el = useRef<any>(null);
@@ -42,4 +43,4 @@ export default function InputOutlined(props: PropType) {
       />
     </TextField>
   );
-}
+})

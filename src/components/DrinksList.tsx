@@ -6,23 +6,27 @@ import InputOutlined from "./InputOutlined";
 
 import Radio, { NativeRadioControl } from "@material/react-radio";
 import "@material/react-radio/dist/radio.css";
+import useMobileDetect from "../use-mobile-detect";
+import { media } from "@glitz/core";
 
 export default (props: RouteType) => {
   const inputRef = useRef<any>();
   const [userFilter, setUserFilterState] = useState(
     localStorage.getItem("userFilter") || "ALL"
   );
-  console.log(userFilter);
+  const {isMobile} = useMobileDetect();
 
   function setUserFilter(filter: string) {
     setUserFilterState(filter);
     localStorage.setItem("userFilter", filter);
   }
 
-  useEffect(() => {
-    console.log(inputRef.current);
-    (inputRef.current as HTMLInputElement).focus();
-  }, []);
+  // Something is weird with the auto focus...
+  //
+  // useEffect(() => {
+  //   console.log(inputRef.current);
+  //   (inputRef.current as HTMLInputElement).focus();
+  // }, []);
 
   const [filter, setFilter] = useState("");
   let filteredDrinks = drinks.filter(drink => {
@@ -45,9 +49,9 @@ export default (props: RouteType) => {
 
   return (
     <Container>
-      <Header>
+      <Header css={isMobile && {flexDirection: 'column', height: 100}}>
         <InputOutlined
-          placeholder="Filtrera på drink/ingrediens"
+          placeholder={isMobile ? "Filtrera" : "Filtrera på drink/ingrediens"}
           onChange={phrase => setFilter(phrase)}
           elementRef={el => (inputRef.current = el)}
         />
