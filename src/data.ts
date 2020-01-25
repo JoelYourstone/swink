@@ -929,6 +929,20 @@ export const ingredientsList: IngredientsListType = [
     type: "Ginger Beer"
   },
   {
+    identifier: 'passionfruit',
+    image: 'https://www.thespruceeats.com/thmb/KzWwAOQ87HFw5PZ8yobMeI1BKqA=/1885x1414/smart/filters:no_upscale()/Passionfruit-GettyImages-699156861-59c88ed7d088c0001183dee1.jpg',
+    name: 'Passion Fruit',
+    pricePerUnit: 0,
+    type: 'Other'
+  },
+  {
+    identifier: 'cucumberslice',
+    image: 'https://static.turbosquid.com/Preview/2019/05/23__01_03_28/1.jpg2065EE30-F915-49CB-AF65-91AA26A9D2A2Zoom.jpg',
+    name: 'Cucumber Slice',
+    pricePerUnit: 0,
+    type: 'Other'
+  },
+  {
     identifier: "alcfreegingerbeer",
     image: "https://d2rfo6yapuixuu.cloudfront.net/h84/h4d/9146124894238/5010134913935_1527847519235_master_axfood_400",
     name: "Alcohol free ginger beer",
@@ -949,6 +963,13 @@ export const ingredientsList: IngredientsListType = [
     pricePerUnit: 0,
     type: "Other"
   },
+  {
+    identifier: 'orangejuice',
+    image: 'https://www.kroger.com/product/images/xlarge/front/0002500010000',
+    name: 'Orange Juice',
+    pricePerUnit: 0,
+    type: 'Juice'
+  }
 ];
 
 export default drinks;

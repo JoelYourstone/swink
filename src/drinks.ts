@@ -1695,7 +1695,13 @@ const drinksList: DrinksList = [
         specificSelection: "chambord"
       }
     ],
-    name: "Sex on the Beach"
+    name: "Sex on the Beach",
+    instructions: [
+      "Shake all orange looking ingredients with ice",
+      "Strain into glass",
+      "Shake the remaining ingredients with ice",
+      "Strain into same glass"
+    ]
   },
   {
     ownedBy: ["Daniel"],
@@ -1866,6 +1872,67 @@ const drinksList: DrinksList = [
       "Top with ginger beer and optionally some mixed frozen berries."
     ],
     name: "New Year's Eve Berry Cocktail"
+  },
+  {
+    name: 'Earth, Wind & Fire',
+    image: 'https://preview.redd.it/nq48xe1ib7c41.jpg?width=640&crop=smart&auto=webp&s=3c4d6962cd21fd4fc94ff78aefc03f99bb753c49',
+    ingredientLineItems: [
+      {
+        name: 'Cucumber Slice',
+        amount: 5,
+        type: 'Other',
+        unit: '',
+        specificSelection: 'cucumberslice'
+      },
+      {
+        name: 'Passion Fruit',
+        amount: 1,
+        type: 'Other',
+        unit: '',
+        specificSelection: 'passionfruit'
+      },
+      {
+        name: 'Agave syrup',
+        amount: 1.5,
+        type: 'Sweetener',
+        unit: 'cl',
+        specificSelection: 'agave'
+      },
+      {
+        name: 'Lime juice',
+        amount: 3,
+        type: 'Fresh fruit juice',
+        unit: 'cl',
+        specificSelection: 'freshlime'
+      },
+      {
+        name: 'Dry Curacao',
+        amount: 2,
+        type: 'Liquor',
+        unit: 'cl',
+        specificSelection: 'drycuracao'
+      },
+      {
+        name: 'Tequila',
+        amount: 4,
+        type: 'Tequila',
+        unit: 'cl',
+      },
+      {
+        name: 'Ginger beer',
+        amount: 4,
+        type: 'Ginger Beer',
+        unit: 'cl',
+        specificSelection: 'gingerbeer'
+      }
+    ],
+    ownedBy: ['Joel', 'Daniel'],
+    instructions: [
+      'Slice cucumber and get meat from passion fruit',
+      'Add to shaker and muddle',
+      'Add all other ingredients except Ginger beer',
+      'Shake and fine strain into highball-ish glass'
+    ]
   }
 ];
 
